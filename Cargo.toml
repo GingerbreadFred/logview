@@ -1,0 +1,13 @@
+[package]
+name = "logview"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+ratatui = "0.29"
+crossterm = "0.28"
+clap = { version = "4.5", features = ["derive"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_yaml = "0.9"
+dirs = "5.0"
+mlua = { version = "0.9", features = ["lua54", "vendored"] }
