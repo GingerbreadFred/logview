@@ -1,0 +1,90 @@
+[2024-01-15 14:23:01.123][  0]LogInit: Build: ++UE5+Release-5.3-CL-29314046
+[2024-01-15 14:23:01.124][  0]LogInit: Engine Version: 5.3.2-29314046+++UE5+Release-5.3-CL-29314046
+[2024-01-15 14:23:01.124][  0]LogInit: Compatible Engine Version: 5.3.0-29314046+++UE5+Release-5.3
+[2024-01-15 14:23:01.124][  0]LogInit: Net CL: 29314046
+[2024-01-15 14:23:01.125][  0]LogInit: OS: Windows 11 (22H2) v.10.0.22621.2428, CPU: AMD Ryzen 7 5800X 8-Core Processor, GPU: NVIDIA GeForce RTX 3080
+[2024-01-15 14:23:01.126][  0]LogCore: API Version: 5.3.2-29314046+++UE5+Release-5.3-CL-29314046
+[2024-01-15 14:23:01.127][  0]LogMemory: Platform Memory Stats for Windows
+[2024-01-15 14:23:01.127][  0]LogMemory: Physical Memory: 32,703.38 MB used, 0.00 MB cached, 32,703.38 MB total
+[2024-01-15 14:23:01.128][  0]LogMemory: Virtual Memory: 134,217,727.99 MB used, 134,217,727.99 MB total
+[2024-01-15 14:23:01.129][  0]LogEngine: Initializing Engine...
+[2024-01-15 14:23:01.345][  0]LogShaderCompilers: Guid format shader working directory is C:\Users\Developer\AppData\Local\Temp\UnrealShaderWorkingDir\FF4B2A6B4F5E77D5A8C9E1F7B2345678\
+[2024-01-15 14:23:01.456][  0]LogMaterial: Building materials for platform PCD3D_SM5
+[2024-01-15 14:23:01.678][  0]LogShaderCompilers: Submitted 1247 shader compile jobs with 'Normal' priority
+[2024-01-15 14:23:02.123][  0]LogPackageName: Display: FPackageName: Mount point added: '../../../Engine/Content/' mounted to '/Engine/'
+[2024-01-15 14:23:02.234][  0]LogPackageName: Display: FPackageName: Mount point added: '../../../MyProject/Content/' mounted to '/Game/'
+[2024-01-15 14:23:02.345][  0]LogShaderCompilers: Compiling shaders: 847/1247
+[2024-01-15 14:23:02.567][  0]LogUObjectHash: Compacting FUObjectHashTables data took 0.12ms
+[2024-01-15 14:23:02.789][  0]LogGameplayTags: LoadGameplayTagsFromSettings: Loaded 127 tags from DefaultGameplayTags.ini
+[2024-01-15 14:23:03.012][  0]LogAudioEngine: Initializing Audio Engine...
+[2024-01-15 14:23:03.234][  0]LogAudioEngine: Audio Device Manager initialized
+[2024-01-15 14:23:03.456][  0]LogRenderTargetPool: r.RenderTargetPoolMin = 400 MB
+[2024-01-15 14:23:03.678][  0]LogShaderCompilers: Warning: 23 Shader compiler errors compiling global shaders for platform PCD3D_SM5:
+[2024-01-15 14:23:03.789][  0]LogShaderCompilers: Error: Failed to compile vertex shader /Engine/Private/BasePassVertexShader.usf for platform PCD3D_SM5
+[2024-01-15 14:23:03.890][  0]LogShaderCompilers: Warning: Retrying shader compilation...
+[2024-01-15 14:23:04.123][  0]LogWorld: Bringing World /Game/Maps/TestLevel.TestLevel up for play (max tick rate 60)
+[2024-01-15 14:23:04.234][  0]LogWorld: Bringing up level for play took: 0.111s
+[2024-01-15 14:23:04.345][  0]LogGameMode: Display: Match State Changed from EnteringMap to WaitingToStart
+[2024-01-15 14:23:04.456][  0]LogNet: Game class is 'GameModeBase'
+[2024-01-15 14:23:04.567][  0]LogGameState: Match State Changed from EnteringMap to WaitingToStart for gamestate GameState_C
+[2024-01-15 14:23:04.678][  0]LogStreaming: Warning: Failed to read file '../../../MyProject/Content/Audio/Music/BackgroundMusic.uasset' error: 'The system cannot find the file specified. (2)'
+[2024-01-15 14:23:04.789][  0]LogBlueprintGraph: New page: Class /Game/Blueprints/PlayerCharacter.PlayerCharacter_C
+[2024-01-15 14:23:04.890][  0]LogAnimation: Building Animation Blueprint: /Game/Characters/Player/PlayerAnimBP.PlayerAnimBP_C
+[2024-01-15 14:23:05.012][  0]LogSkeletalMesh: Building skeletal mesh LODs for /Game/Characters/Player/PlayerMesh.PlayerMesh
+[2024-01-15 14:23:05.123][  0]LogRenderer: Reallocating scene render targets to support 1920x1080 Format 10, sample count 1 (Frame:1).
+[2024-01-15 14:23:05.234][  0]LogParticleSystemManager: Loaded particle system: /Game/Effects/Explosions/ExplosionFX.ExplosionFX
+[2024-01-15 14:23:05.345][  0]LogAI: AIController::BeginPlay for AIController_C
+[2024-01-15 14:23:05.456][  0]LogAI: Running behavior tree: /Game/AI/EnemyBehaviorTree.EnemyBehaviorTree
+[2024-01-15 14:23:05.567][  0]LogPlayerController: PlayerController::ClientRestart
+[2024-01-15 14:23:05.678][  0]LogGameMode: Display: Match State Changed from WaitingToStart to InProgress
+[2024-01-15 14:23:05.789][  0]LogPhysics: Warning: Collision mesh '/Game/Environment/StaticMeshes/Rock_01.Rock_01' has degenerate triangles. This can happen if you have a scaling transform applied.
+[2024-01-15 14:23:05.890][  0]LogTemp: Display: Player has spawned at location: X=1234.56 Y=7890.12 Z=345.67
+[2024-01-15 14:23:06.012][  0]LogBlueprintUserMessages: [PlayerCharacter_C] Health initialized to 100
+[2024-01-15 14:23:06.123][  0]LogGameplayTags: Native GameplayTag /Game/Tags/Gameplay.Player.State.Alive added.
+[2024-01-15 14:23:06.234][  0]LogNet: UNetDriver::ServerReplicateActors: Replicated 47 actors, considered 127 actors
+[2024-01-15 14:23:06.345][  0]LogStreaming: Display: Texture streaming pool size now 2048 MB
+[2024-01-15 14:23:07.456][  0]LogAudio: Warning: Failed to load sound '/Game/Audio/SFX/Footsteps/Footstep_Concrete_01.uasset'
+[2024-01-15 14:23:08.567][  0]LogScriptCore: Script call stack:
+[2024-01-15 14:23:08.568][  0]LogScriptCore: Function /Game/Blueprints/PlayerCharacter.PlayerCharacter_C:EventBeginPlay
+[2024-01-15 14:23:08.569][  0]LogScriptCore: Function /Game/Blueprints/PlayerCharacter.PlayerCharacter_C:InitializePlayer
+[2024-01-15 14:23:09.678][  0]LogGarbageCollection: GC Sweep: Objects: 12547->11203, GC Time: 2.34ms
+[2024-01-15 14:23:10.789][  0]LogTemp: Warning: Enemy AI taking longer than expected to respond: 2.1 seconds
+[2024-01-15 14:23:11.890][  0]LogAnimation: Warning: Animation sequence /Game/Characters/Enemy/Animations/Walk_Forward.Walk_Forward is missing additive reference pose
+[2024-01-15 14:23:12.012][  0]LogBlueprintUserMessages: [WeaponComponent_C] Weapon equipped: AssaultRifle_01
+[2024-01-15 14:23:13.123][  0]LogInput: InputComponent Priority: -1 for PlayerController_C
+[2024-01-15 14:23:14.234][  0]LogTemp: Display: Player fired weapon at target: Enemy_C_2
+[2024-01-15 14:23:14.235][  0]LogPhysics: Projectile hit: Enemy_C_2 at location X=2456.78 Y=1357.91 Z=234.56
+[2024-01-15 14:23:14.236][  0]LogBlueprintUserMessages: [Enemy_C] Taking damage: 25 points
+[2024-01-15 14:23:14.345][  0]LogAudio: Playing sound at location: X=2456.78 Y=1357.91 Z=234.56 - /Game/Audio/SFX/Weapons/RifleShot_01.RifleShot_01
+[2024-01-15 14:23:15.456][  0]LogGameplayTags: Native GameplayTag /Game/Tags/Combat.Weapon.Fired added.
+[2024-01-15 14:23:16.567][  0]LogTemp: Display: Enemy defeated! Score: 150
+[2024-01-15 14:23:17.678][  0]LogParticleSystemManager: Spawning particle system: /Game/Effects/Blood/BloodSplatter.BloodSplatter
+[2024-01-15 14:23:18.789][  0]LogAI: Behavior tree completed for AIController_C with result: Failed
+[2024-01-15 14:23:19.890][  0]LogRenderTargetPool: Growing render target pool from 245MB to 387MB
+[2024-01-15 14:23:20.012][  0]LogStreaming: Warning: Texture /Game/Textures/Environment/Ground_Diffuse.Ground_Diffuse took 156ms to stream in
+[2024-01-15 14:23:21.123][  0]LogTemp: Error: Failed to save game state to slot 'AutoSave_01': Access denied
+[2024-01-15 14:23:22.234][  0]LogSaveGame: Warning: SaveGame serialization is taking longer than expected: 5.7 seconds
+[2024-01-15 14:23:23.345][  0]LogMemory: Warning: Memory usage is at 85% (27.8GB/32.7GB)
+[2024-01-15 14:23:24.456][  0]LogGarbageCollection: Forcing garbage collection due to high memory usage
+[2024-01-15 14:23:24.567][  0]LogGarbageCollection: GC Sweep: Objects: 15432->13789, GC Time: 12.45ms, freed 1.2GB
+[2024-01-15 14:23:25.678][  0]LogNet: Warning: Network packet loss detected: 3.2%
+[2024-01-15 14:23:26.789][  0]LogOnline: OSS: Creating online subsystem instance for: NULL
+[2024-01-15 14:23:27.890][  0]LogTemp: Display: Level transition initiated: /Game/Maps/MainMenu.MainMenu
+[2024-01-15 14:23:28.012][  0]LogWorld: BeginTearingDown for /Game/Maps/TestLevel.TestLevel
+[2024-01-15 14:23:28.123][  0]LogStreaming: FlushAsyncLoading(true): Flushed 0 packages in 0.001s
+[2024-01-15 14:23:28.234][  0]LogUObjectHash: Compacting FUObjectHashTables data took 2.67ms
+[2024-01-15 14:23:28.345][  0]LogWorld: LoadMap: /Game/Maps/MainMenu.MainMenu
+[2024-01-15 14:23:28.456][  0]LogPackageName: Display: FPackageName: Mount point added: '../../../MyProject/Content/' mounted to '/Game/'
+[2024-01-15 14:23:29.567][  0]LogAudioEngine: Stopping all audio components
+[2024-01-15 14:23:30.678][  0]LogRenderer: Reallocating scene render targets to support 1920x1080 Format 10, sample count 1 (Frame:2847).
+[2024-01-15 14:23:31.789][  0]LogUI: Creating widget: /Game/UI/Menus/MainMenuWidget.MainMenuWidget_C
+[2024-01-15 14:23:32.890][  0]LogSlate: Updating Slate application scale from 1.000000 to 1.000000
+[2024-01-15 14:23:33.012][  0]LogTemp: Display: Main menu loaded successfully
+[2024-01-15 14:23:34.123][  0]LogEngine: Game engine shutdown
+[2024-01-15 14:23:34.234][  0]LogExit: Preparing to exit.
+[2024-01-15 14:23:34.345][  0]LogExit: Object subsystem cleanup
+[2024-01-15 14:23:34.456][  0]LogModuleManager: Shutting down and abandoning module AudioMixerCore (20)
+[2024-01-15 14:23:34.567][  0]LogModuleManager: Shutting down and abandoning module Renderer (19)
+[2024-01-15 14:23:34.678][  0]LogModuleManager: Shutting down and abandoning module RHI (18)
+[2024-01-15 14:23:34.789][  0]LogCore: Engine exit requested (reason: EngineExit() was called; note: exit was already requested)
+[2024-01-15 14:23:34.890][  0]LogExit: Exiting.

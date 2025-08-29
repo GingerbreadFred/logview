@@ -1,6 +1,5 @@
 use crossterm::event::KeyCode;
-use mlua::Lua;
-use std::{error::Error, fs, path::PathBuf};
+use std::{error::Error, path::PathBuf};
 
 #[derive(Debug, Clone, Copy, PartialEq)]
 pub enum InputMode {
@@ -9,33 +8,19 @@ pub enum InputMode {
 }
 
 pub struct App {
-    pub content: Vec<String>,
     pub should_quit: bool,
     pub input_mode: InputMode,
     pub input_buffer: String,
-    pub lua: Lua,
+    pub buffer: super::buffer::Buffer,
 }
 
 impl App {
     pub fn new(file_path: Option<PathBuf>) -> Result<App, Box<dyn Error>> {
-        let content = if let Some(path) = file_path {
-            fs::read_to_string(&path)?
-                .lines()
-                .map(|s| s.to_string())
-                .collect()
-        } else {
-            vec![
-                "Welcome to logview!".to_string(),
-                "Press ':' to open command prompt, 'q' to quit.".to_string(),
-            ]
-        };
-
         Ok(App {
-            content,
             should_quit: false,
             input_mode: InputMode::Normal,
             input_buffer: String::new(),
-            lua: Lua::new(),
+            buffer: super::buffer::Buffer::new(file_path)?,
         })
     }
 
@@ -52,10 +37,13 @@ impl App {
             InputMode::Command => match key {
                 KeyCode::Enter => {
                     let command = self.input_buffer.clone();
-                    if command == "quit()" {
+                    if command == "quit" {
                         self.should_quit = true;
-                    } else {
-                        let _ = self.lua.load(&command).exec();
+                    } else if command.starts_with("open ") {
+                        let file_path = command[5..].trim();
+                        if let Ok(buffer) = crate::buffer::Buffer::new(Some(PathBuf::from(file_path))) {
+                            self.buffer = buffer;
+                        }
                     }
                     self.input_mode = InputMode::Normal;
                     self.input_buffer.clear();
@@ -73,5 +61,9 @@ impl App {
                 _ => {}
             },
         }
+    }
+
+    pub fn get_content(&mut self) -> &Vec<String> {
+        self.buffer.get_content()
     }
 }

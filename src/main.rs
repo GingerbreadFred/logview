@@ -1,4 +1,5 @@
 mod app;
+mod buffer;
 mod config;
 
 use app::{App, InputMode};
@@ -17,7 +18,7 @@ use ratatui::{
     text::Span,
     widgets::{Block, Borders, List, ListItem, Paragraph},
 };
-use std::{error::Error, io, path::PathBuf};
+use std::{error::Error, io, path::PathBuf, time::Duration};
 
 #[derive(Parser)]
 #[command(name = "logview")]
@@ -63,9 +64,11 @@ fn run_app<B: ratatui::backend::Backend>(
     loop {
         terminal.draw(|f| ui(f, app))?;
 
-        if let Event::Key(key) = event::read()? {
-            if key.kind == KeyEventKind::Press {
-                app.handle_key_event(key.code);
+        if event::poll(Duration::from_millis(0))? {
+            if let Event::Key(key) = event::read()? {
+                if key.kind == KeyEventKind::Press {
+                    app.handle_key_event(key.code);
+                }
             }
         }
 
@@ -75,7 +78,7 @@ fn run_app<B: ratatui::backend::Backend>(
     }
 }
 
-fn ui(f: &mut ratatui::Frame, app: &App) {
+fn ui(f: &mut ratatui::Frame, app: &mut App) {
     let main_area = if app.input_mode == InputMode::Command {
         let chunks = Layout::default()
             .direction(Direction::Vertical)
@@ -91,11 +94,29 @@ fn ui(f: &mut ratatui::Frame, app: &App) {
         f.area()
     };
 
-    let content_lines: Vec<ListItem> = app
-        .content
-        .iter()
-        .map(|line| ListItem::new(Span::styled(line.clone(), Style::default())))
-        .collect();
+    let content = app.get_content();
+    let content_lines: Vec<ListItem> = if content.is_empty() {
+        vec![
+            ListItem::new(Span::styled("Welcome to logview!".to_string(), Style::default())),
+            ListItem::new(Span::styled("Press ':' to open command prompt, 'q' to quit.".to_string(), Style::default())),
+        ]
+    } else {
+        let available_height = (main_area.height as usize).saturating_sub(2);
+
+        let start_index = if content.len() > available_height {
+            content.len() - available_height
+        } else {
+            0
+        };
+
+        content
+            .iter()
+            .skip(start_index)
+            .map(|line| {
+                ListItem::new(Span::styled(line.clone(), Style::default()))
+            })
+            .collect()
+    };
 
     let list = List::new(content_lines).block(
         Block::default()
